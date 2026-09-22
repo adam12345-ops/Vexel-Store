@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Vexel Store</title>
+    <!-- مكتبة تليجرام الأساسية لربط الصفحة بالبوت -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        /* إعدادات الخلفية والخط */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #18222d; /* لون داكن احترافي يشبه تليجرام */
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header {
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+
+        .header h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .header p {
+            color: #a3b1c6;
+            font-size: 14px;
+        }
+
+        /* شبكة الأزرار (مربعين في كل سطر) */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        /* تصميم المربعات (الأزرار) */
+        .btn {
+            padding: 20px 10px;
+            border: none;
+            border-radius: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.1s;
+        }
+
+        /* حركة الزر عند الضغط عليه */
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        .btn span {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        /* الألوان المخصصة للمربعات التي طلبتها! */
+        .btn-store { background-color: #4CAF50; } /* أخضر */
+        .btn-deposit { background-color: #2196F3; } /* أزرق */
+        .btn-profile { background-color: #9C27B0; } /* بنفسجي */
+        .btn-support { background-color: #F44336; } /* أحمر */
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h2>مرحباً بك في Vexel Store 👋</h2>
+        <p>أفضل المنتجات الرقمية بأفضل الأسعار</p>
+    </div>
+
+    <!-- المربعات الملونة -->
+    <div class="grid-container">
+        <button class="btn btn-store" onclick="showSection('المتجر')">
+            <span>🛍️</span>
+            المتجر
+        </button>
+        <button class="btn btn-deposit" onclick="showSection('إيداع')">
+            <span>📥</span>
+            إيداع
+        </button>
+        <button class="btn btn-profile" onclick="showSection('الملف الشخصي')">
+            <span>👤</span>
+            الملف الشخصي
+        </button>
+        <button class="btn btn-support" onclick="showSection('الدعم')">
+            <span>🚨</span>
+            الدعم
+        </button>
+    </div>
+
+    <script>
+        // إخبار تليجرام أن التطبيق جاهز وتوسيع الشاشة
+        let tg = window.Telegram.WebApp;
+        tg.expand();
+
+        // دالة مؤقتة لاختبار الأزرار
+        function showSection(sectionName) {
+            alert("لقد ضغطت على قسم: " + sectionName + "\n(سيتم برمجة هذا القسم لاحقاً)");
+        }
+    </script>
+
+</body>
+</html>
